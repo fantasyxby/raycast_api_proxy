@@ -101,7 +101,7 @@ class GeminiProvider(ApiProviderAbc):
                 yield f'data: {json_dumps({"text": chunk.text})}\n\n'
 
     async def translate_completions(self, raycast_data: dict):
-        model_name = raycast_data.get("model", "gemini-pro")
+        model_name = raycast_data.get("model", "gemini-2.0-flash")
         target_language = raycast_data["target"]
         google_message = f"translate the following text to {target_language}:\n"
         google_message += raycast_data["q"]
